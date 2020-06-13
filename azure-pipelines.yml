@@ -9,11 +9,18 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world Azure!
-  displayName: 'Run a one-line script'
+jobs
+-job: first display
+ steps:
+ - script: echo first display Hello, world Azure!
+   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+ - script: |
+     echo Add other tasks to build, test, and deploy your project.
+     echo See https://aka.ms/yaml
+   displayName: 'Run a multi-line script'
+
+-job: second display
+ steps:
+ - script: echo second display Hello, world Azure!
+   displayName: 'Run a one-line script'
