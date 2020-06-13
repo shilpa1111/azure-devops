@@ -10,17 +10,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 jobs:
--job: first display
+-job: Job1
  steps:
- - script: echo first display Hello, world Azure!
+ - script: echo Job1 - Hello, world Azure!
    displayName: 'Run a one-line script'
 
  - script: |
      echo Add other tasks to build, test, and deploy your project.
      echo See https://aka.ms/yaml
    displayName: 'Run a multi-line script'
-
--job: second display
+-job: Job2
  steps:
- - script: echo second display Hello, world Azure!
+ - script: echo Job2 - display Hello, world Azure!
    displayName: 'Run a one-line script'
