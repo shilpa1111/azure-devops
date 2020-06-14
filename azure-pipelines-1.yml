@@ -15,6 +15,9 @@ stages:
   - job: first_job
     steps:
     - script: echo first job Hello, world!
+    - bash: echo $(Build.BuildNumber)
+    - bash: echo $(Build.BuildId)
+    - bash: echo $(Build.SourceBranchName)
     displayName: 'Run a one-line script'
 
   - job: second_job
@@ -27,6 +30,9 @@ stages:
     steps:
     - bash: echo devdeploy
 - stage: QADeployment
+  dependsOn:
+  - first_job
+  - second_job
   jobs:
   - job: deploy_qa
     steps:
