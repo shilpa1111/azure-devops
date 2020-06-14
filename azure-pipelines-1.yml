@@ -31,13 +31,15 @@ stages:
     - bash: echo devdeploy
 - stage: QADeployment
   dependsOn:
-  - first_job
-  - second_job
+  - build
   jobs:
   - job: deploy_qa
     steps:
     - bash: echo qadeploy
 - stage: prodDeployment
+  dependsOn:
+  - DevDeployment
+  - QADeployment 
   jobs:
   - job: deploy_prod
     steps:
