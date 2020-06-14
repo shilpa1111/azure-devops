@@ -12,12 +12,12 @@ pool:
 stages:
 - stage: build
   jobs:
-  - jobs: first job
+  - job: first job
     steps:
     - script: echo first job Hello, world!
     displayName: 'Run a one-line script'
 
-  - jobs: second job
+  - job: second job
     steps:
     - script: echo second job Hello, world!
     displayName: 'Run a one-line script'
